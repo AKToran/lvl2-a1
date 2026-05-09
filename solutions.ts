@@ -46,3 +46,29 @@ const toggleReadStatus = (book: IBook):IBookWithReadStatus =>{
     isRead: true
   };
 }
+
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name:string, age: number){
+    this.name = name;
+    this.age = age;
+  }
+}
+
+type Grade = "A" | "B" | "C" | "D" | "E" | "F";
+
+class Student extends Person {
+  grade: Grade;
+
+  constructor(name:string, age: number, grade: Grade) {
+    super(name, age)
+    this.grade = grade
+  }
+
+  getDetails(){
+    return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`
+  }
+}
