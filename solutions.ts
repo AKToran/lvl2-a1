@@ -11,3 +11,14 @@ const reverseString= (str: string):string =>{
   return reversed;
 }
 
+
+type StringOrNumber = string | number;
+
+const checkType = (param: StringOrNumber): string =>{
+  if(typeof param === "number") {
+    return "Number";
+  }
+  else{
+    return "String";
+  }
+}
