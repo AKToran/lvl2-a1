@@ -5,3 +5,9 @@ const filterEvenNumbers = (array:numberArray): numberArray=>{
   return result;
 }
 
+
+const reverseString= (str: string):string =>{
+  let reversed = [...str].reverse().join("");
+  return reversed;
+}
+
