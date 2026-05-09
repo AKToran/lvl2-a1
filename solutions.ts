@@ -28,3 +28,21 @@ const getProperty = <T> (object:T, key: keyof T) =>{
   return object[key];
 }
 
+
+
+interface IBook {
+  title: string;
+  author: string;
+  publishedYear: number;
+}
+
+interface IBookWithReadStatus extends IBook {
+  isRead: boolean;
+}
+
+const toggleReadStatus = (book: IBook):IBookWithReadStatus =>{
+  return {
+    ...book, 
+    isRead: true
+  };
+}
