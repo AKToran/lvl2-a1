@@ -22,3 +22,9 @@ const checkType = (param: StringOrNumber): string =>{
     return "String";
   }
 }
+
+
+const getProperty = <T> (object:T, key: keyof T) =>{
+  return object[key];
+}
+
