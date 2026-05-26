@@ -1,10 +1,8 @@
 # Clean Code: How Pick and Omit keep TypeScript DRY
 
-In TypeScript we often start with a Master Interface - a detailed model of a component. However, we rarely need every single property of that model in every part of the application. A product card page needs different data than a product details page, even though they both reference a "Product" object.  
+In TypeScript we often start with a Master Interface - a detailed model of a component. However, we rarely need every single property of that model in every part of the application. We often fall into the trap of manually creating new, smaller interfaces that mirror parts of the original. This leads to code duplication and "syncing nightmare", where updating the master interface requires updating 5 other manually created slices. This is where the **Pick** and **Omit** utility types become essential for keeping our codebase DRY(Don't Repeat Yourself).  
 
-We often fall into the trap of manually creating new, smaller interfaces that mirror parts of the original. This leads to code duplication and "syncing nightmare", where updating the master interface requires updating 5 other manually created slices. This is where the **Pick** and **Omit** utility types become essential for keeping our codebase DRY(Don't Repeat Yourself).
-
-The Master Interface: Lets say we are building an application with a central Product interface:
+A product card page needs different data than a product details page, even though they both reference a "Product" object. The Master Interface: Lets say we are building an application with a central Product interface:
 
 ```
 interface Product {
